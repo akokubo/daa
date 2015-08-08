@@ -1,0 +1,488 @@
+@charset "UTF-8";
+/*
+------------------------------------------------------------
+ベース・スタイルシート
+------------------------------------------------------------
+目次
+・基本構造
+　・ページレイアウト、背景、枠線の指定
+　・clearfix hacks
+　・基本フォントの指定
+・リンク
+・ヘッダ
+　・バナー
+　・コーテシィナビゲーション
+　・グローバルナビゲーション
+　・パンくずリスト
+・サイドバー
+　・サイドバー上部
+　・ローカルナビゲーション
+　・サイドバー下部
+・メインコンテンツ
+　・メインコンテンツ上部
+　・メインコンテンツ中部
+　・メインコンテンツ下部
+　・メインコンテンツ要素
+・フッタ
+・個別ページ
+　・トップページ
+　・特集
+　・沿革
+　・お問い合わせ
+
+------------------------------------------------------------
+プロパティの指定順序
+  from http://www.mozilla.org/css/base/content.css
+・視覚整形モデル(表示と配置)
+  display
+  list-style
+  position
+  float
+  clear
+・ボックスモデル
+  width
+  height
+  margin
+  padding
+  border
+・背景と前景
+  background
+・フォントとテキスト
+  color
+  font
+  text-decoration
+  text-align
+  vertical-align
+  white-space
+  other text
+・生成内容
+  content
+------------------------------------------------------------ */
+
+
+/* =基本構造
+------------------------------------------------------------ */
+/* ページレイアウト、背景、枠線の指定 */
+body {
+	padding: 20px 0 0 20px;
+	background: url(/daa/public/images/body-bg.png) repeat;
+}
+#wrapper {
+	width:989px;
+}
+#header {
+	height: 150px;
+	background: url(/daa/public/images/header-bg-trans.png) no-repeat;
+}
+#content {
+	padding: 0 43px 15px 40px;
+	background: url(/daa/public/images/content-bg-trans.png) repeat-y;
+}
+#aside {
+	float: left;
+	width: 183px;
+}
+#article {
+	float: right;
+	width: 715px;
+	background: url(/daa/public/images/article-center-bg.png) repeat-y;
+}
+#article-wide {
+	width: 908px;
+	background: url(/daa/public/images/article-center-wide-bg.png) repeat-y;
+}
+#footer {
+	height: 85px;
+	background: url(/daa/public/images/footer-bg-trans.png) no-repeat;
+}
+
+/* clearfix hacks */
+.clearfix:after {
+	content: ".";  /* 新しい要素を作る */
+	display: block;  /* ブロックレベル要素に */
+	clear: both;
+	height: 0;
+	visibility: hidden;
+}
+.clearfix {
+	min-height: 1px;
+}
+* html .clearfix {
+	height: 1px;
+	/*¥*//*/
+	height: auto;
+	overflow: hidden;
+	/**/
+}
+
+/* 基本フォントの指定 */
+body,
+input,
+textarea {
+	font-size: 12px;
+	font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", sans-serif; /* 指定順は Mac Firefox, Mac Safari, Win, etc. */
+	line-height: 1.5;
+	letter-spacing: 0.1em;
+	text-align: justify;
+}
+* html body {
+		font-size: 75%; /* for WinIE6-5: 16pxをデフォルトとし、12pxのサイズを計算: Star html Hack */
+}
+
+pre,
+code,
+var,
+samp,
+kbd {
+	font-family: "Osaka−等幅", "Osaka-Mono", "ＭＳ ゴシック", monospace; /* 指定順は Mac Firefox, Mac Safari, Win, etc. */
+}
+
+
+/* =ヘッダ
+------------------------------------------------------------ */
+/* バナー */
+#banner {
+	padding: 30px 0 0 250px;
+	color: white;
+}
+#banner p#lead {
+	padding: 47px 0 0 0;
+}
+#banner h1 {
+	font-size: 200%;
+	font-weight: normal;
+}
+#banner h1 a {
+	color: white;
+	text-decoration: none;
+}
+#banner h1 a:hover,
+#banner h1 a:active {
+	color: #ff9;
+}
+#banner-img {
+	position: absolute;
+	top: 15px;
+	left: 690px;
+	width: 267px;
+	height: 208px;
+	background: url(/daa/public/images/device-trans.png);
+}
+
+/* コーテシィナビゲーション */
+ul#courtesy-nav {
+	float: left;
+	padding: 7px 0 0 50px;
+	list-style-position: outside;
+	list-style-type: none;
+}
+ul#courtesy-nav li {
+	float: left;
+	padding: 0 20px 0 15px;
+	background: url(/daa/public/images/rightarrow-trans.png) no-repeat;
+}
+ul#courtesy-nav li a {
+	display: block;
+	color: white;
+	text-decoration: none;
+}
+
+/* グローバルナビゲーション */
+ul#nav {
+	list-style-position: outside;
+	list-style-type: none;
+	padding: 0 0 0 7px;
+}
+ul#nav li {
+	float: left;
+	border: 2px solid #000;
+	border-top-color: #888;
+	border-left-color: #888;
+}
+ul#nav li a {
+	display: block;
+	padding: 5px 20px;
+	font-size: 107%;
+	text-decoration: none;
+}
+ul#nav li a:link,
+ul#nav li a:visited {
+	background: #484848;
+	color: white;
+}
+ul#nav li a:hover,
+ul#nav li a:active {
+	background: #C9C9C9;
+	color: black;
+}
+ul#nav li a.select {
+	background: #C9C9C9;
+	color: black;
+}
+
+/* パンくずリスト */
+.breadcrumb {
+	padding: 10px;
+}
+
+
+/* =サイドバー
+------------------------------------------------------------ */
+/* サイドバー上部 */
+#aside-top {
+	height: 44px;
+	background: url(/daa/public/images/aside-top-bg.png);
+}
+#aside-top p {
+	padding: 10px 20px;
+	color: white;
+	font-size: 150%;
+	font-weight: bold;
+	text-align: center;
+}
+
+/* ローカルナビゲーション */
+#localnav li a {
+	display: block;
+	padding: 5px 20px;
+	color: black;
+	text-decoration: none;
+}
+#localnav li a:link,
+#localnav li a:visited {
+	background: url(/daa/public/images/aside-unfocus-bg.png) no-repeat bottom;
+	color: #EEE;
+}
+#localnav li a:hover,
+#localnav li a:active {
+	background: url(/daa/public/images/aside-focus-bg.png) no-repeat bottom;
+	color: black;
+}
+#localnav li a.select {
+	background: url(/daa/public/images/aside-focus-bg.png) no-repeat bottom;
+	color: black;
+}
+
+/* サイドバー下部 */
+#aside-bottom {
+	height: 30px;
+	background: url(/daa/public/images/aside-bottom-bg.png) bottom no-repeat;
+}
+
+
+/* =メインコンテンツ
+------------------------------------------------------------ */
+/* メインコンテンツ上部 */
+#article-top {
+	height: 20px;
+}
+#article #article-top {
+	background: url(/daa/public/images/article-top-bg.png) no-repeat;
+}
+#article-wide #article-top {
+	background: url(/daa/public/images/article-top-wide-bg.png) no-repeat;
+}
+
+/* メインコンテンツ中部 */
+#article-center {
+	padding: 0 20px;
+}
+
+/* メインコンテンツ下部 */
+#article-bottom {
+	height: 20px;
+}
+#article #article-bottom {
+	background: url(/daa/public/images/article-bottom-bg.png) no-repeat bottom;
+}
+#article-wide #article-bottom {
+	background: url(/daa/public/images/article-bottom-wide-bg.png) no-repeat bottom;
+}
+
+/* メインコンテンツ要素 */
+#article h2,
+#article-wide h2 {
+	margin-bottom: 20px;
+	border-bottom: 2px solid #AAA;
+	font-size: 240%;
+}
+#article h3,
+#article-wide h3 {
+	margin: 0 0 10px 0;
+	border-bottom: 1px solid #AAA;
+	font-size: 124%;
+}
+#article ul,
+#article-wide ul {
+	list-style-type: disc;
+	margin-bottom: 20px;
+	margin-left: 1.5em;
+}
+#article ul li,
+#article-wide ul li {
+	margin-bottom: 9px;
+}
+#article p,
+#article-wide p {
+	margin-bottom: 1em;
+	text-indent: 1em;
+}
+#article dt,
+#article-wide dt {
+	margin-top: 1em;
+	font-weight: bold;
+}
+#article dd,
+#article-wide dd {
+	margin-bottom: 1em;
+	margin-left: 6em;
+}
+#article table,
+#article th,
+#article td,
+#article-wide table,
+#article-wide th,
+#article-wide td {
+	border: 1px solid #AAA;
+}
+#article table,
+#article-wide table {
+	border-collapse: collapse;
+}
+#article th,
+#article td,
+#article-wide th,
+#article-wide td {
+	padding: 4px;
+}
+#article th,
+#article-wide th {
+	font-weight: bold;
+}
+
+div.section {
+	margin-bottom: 30px;
+}
+p.figure {
+	text-align: center;
+}
+
+
+/* =フッタ
+------------------------------------------------------------ */
+#copyright {
+	padding: 13px 0 0 0;
+	text-align: center;
+	color: white;
+}
+
+
+/* =個別ページ
+------------------------------------------------------------ */
+/* トップページ */
+#home ul#nav {
+	padding-bottom: 5px;
+}
+#home #article-center h2 {
+	border: none;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	text-align: center;
+}
+#home div.section {
+	padding-left: 85px;
+}
+
+/* 特集 */
+ul#specials {
+	padding: 18px 0px 0px 45px;
+	list-style-position: outside;
+	list-style-type: none;
+}
+ul#specials li {
+	float: left;
+	border: 1px solid #999;
+}
+ul#specials li a {
+	display: block;
+	padding: 4px 20px 4px 20px;
+	text-decoration: none;
+}
+ul#specials li#specials_title {
+	padding: 4px 20px 4px 20px;
+	color: white;
+	background: url(/daa/public/images/nav-bg.png) repeat-x;
+}
+ul#specials li a:link,
+ul#specials li a:visited {
+	color: white;
+	background: url(/daa/public/images/nav-bg.png) repeat-x;
+}
+ul#specials li a:hover,
+ul#specials li a:active {
+	color: black;
+	background: url(/daa/public/images/nav-bg-select.png) repeat-x;
+}
+ul#specials li a.select {
+	color: black;
+	background: url(/daa/public/images/nav-bg-select.png) repeat-x;
+}
+
+/* 沿革 */
+#history #article th {
+	width: 5.5em;
+	text-align: right;
+}
+
+/* お問い合わせ */
+#inquiry #article-wide table {
+	line-height: 2.3;
+}
+#inquiry #article-wide table th,
+#inquiry #article-wide table td {
+	vertical-align: top;
+}
+#inquiry #article-wide table th {
+	width: 11em;
+}
+#inquiry #article-wide table td {
+	width: 500px;
+}
+#inquiry #article-wide p.address {
+	width: 400px;
+	margin-left: 30px;
+	padding: 10px;
+	border: 1px solid #999;
+	background: #fefefe;
+	text-indent: 0;
+}
+#inquiry form {
+	padding-left: 30px;
+}
+#inquiry form input,
+#inquiry form textarea {
+	position: relative;
+	width: 495px;
+	border-top: 1px solid #666;
+	border-left: 1px solid #666;
+	border-right: 1px solid #AAA;
+	border-bottom: 1px solid #AAA;
+}
+#inquiry form input:focus,
+#inquiry form textarea:focus {
+	background-color: #EEE;
+}
+#inquiry form td.submit input {
+	width: 10em;
+	text-align: center;
+}
+#inquiry form input.error,
+#inquiry form textarea.error {
+	border: 3px solid red;
+}
+#inquiry #article-wide td.submit {
+	text-align: right;
+}
+#inquiry .notice {
+	color: red;
+}

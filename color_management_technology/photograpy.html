@@ -1,0 +1,126 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+ <meta http-equiv="content-type" content="application/xhtml+xml; charset=utf-8" />
+ <meta name="robots" content="index, follow" />
+ <meta http-equiv="Content-Script-Type" content="text/javascript" />
+ <meta http-equiv="Content-Style-Type" content="text/css" />
+ <link rel="stylesheet" href="/daa/public/stylesheets/import.css" type="text/css" media="screen,tv" />
+<!--[if IE 6]>
+ <link rel="stylesheet" href="/daa/public/stylesheets/win-ie6.css" type="text/css" media="screen" />
+<![endif]-->
+<!--[if IE 7]>
+ <link rel="stylesheet" href="/daa/public/stylesheets/win-ie7.css" type="text/css" media="screen" />
+<![endif]-->
+ <link rel="stylesheet" href="/daa/public/stylesheets/print.css" type="text/css" media="print" />
+ <meta name="description" content="デジタルアーカイブあおもりにおける色再現撮影の方法" />
+ <meta name="keywords" content="デジタルアーカイブ,あおもり,撮影,カラーマネージメント,分光,色再現" />
+ <title>撮影と画像処理における色再現: デジタルアーカイブあおもり</title>
+ <link rel="favourites icon" href="/daa/favicon.ico" />
+</head>
+<body id="photograpy">
+<div id="wrapper"><!-- HTML全体 -->
+<div id="header" class="clearfix"><!-- ヘッダ -->
+<ul id="courtesy-nav" class="clearfix"><!-- コーテシィナビゲーション -->
+<li><a href="/daa/">ホーム</a></li><li><a href="/daa/inquiry.html">お問い合わせ</a></li><li><a href="/daa/sitemap.html">サイトマップ</a></li><li><a href="http://www.balantec.co.jp/">株式会社バランテックWebサイト</a></li>
+<!-- コーテシィナビゲーションおわり --></ul>
+<div id="banner"><!-- バナー -->
+<p id="banner-img"></p>
+<p id="lead">迫真のデジタル色再現</p>
+<h1><a href="/daa/">デジタルアーカイブあおもり</a></h1>
+<!-- バナーおわり --></div>
+<!-- ヘッダおわり --></div>
+<div id="content" class="clearfix"><!-- コンテンツ領域 -->
+<ul id="nav" class="clearfix"><!-- グローバルナビゲーション -->
+<li><a href="/daa/">ホーム</a></li><li><a href="/daa/specials/transfer_to_digital_photography.html" title="急がれるデジタル撮影への移行" >特集</a></li><li><a href="/daa/about_us.html" title="組織概要" >組織概要</a></li><li><a href="/daa/services.html" title="サービス内容" >サービス内容</a></li><li><a href="/daa/color_management_technology.html" title="色再現技術"  class="select">色再現技術</a></li><li><a href="/daa/join_us.html" title="新連携メンバー募集" >新連携メンバー募集</a></li>
+<!-- グローバルナビゲーションおわり --></ul>
+<div class="breadcrumb">
+<a href="/daa/" title="ホーム">ホーム</a> <span class="breadcrumb-separator">&gt;</span> 
+<a href="/daa/color_management_technology.html" title="色再現技術">色再現技術</a> <span class="breadcrumb-separator">&gt;</span> 
+<span class="breadcrumb-current">撮影と画像処理における色再現</span></div>
+<div id="aside"><!-- サイドバー -->
+<div id="aside-top">
+<p>色再現技術</p>
+</div>
+<ul id="localnav"><li><a href="/daa/color_management_technology.html" title="色再現技術" >色再現技術</a></li><li><a href="/daa/color_management_technology/introductions_to_color.html" title="色の世界" >色の世界</a></li><li><a href="/daa/color_management_technology/digital_archives.html" title="デジタルアーカイブとカラーマネージメント" >デジタルアーカイブとカラーマネージメント</a></li><li><a href="/daa/color_management_technology/photograpy.html" title="撮影と画像処理における色再現"  class="select">撮影と画像処理における色再現</a></li><li><a href="/daa/color_management_technology/printing.html" title="印刷における色再現" >印刷における色再現</a></li></ul>
+<div id="aside-bottom">
+</div>
+<!-- サイドバーおわり --></div>
+<div id="article" class="clearfix"><!-- メインコンテンツ -->
+<div id="article-top">
+</div>
+<div id="article-center">
+<h2>撮影と画像処理における色再現</h2>
+<div class="section">
+<p>撮影における色再現には、大きく分けて2つの方法があります。
+一つは、従来のデジタルカメラによるRGB撮影における色再現。
+もう一つは、マルチバンド撮影における色再現です。
+</p>
+</div>
+<div class="section">
+<h3>RGB撮影における色再現</h3>
+<p>
+通常のデジタルカメラを利用したRGB撮影における色再現では、撮影時にカラーチャートを撮影しておきます。
+カラーチャートは色のモノサシに相当します。
+カラーチャートの各色がどのように変化したのかを調べ、その変化を補正することで、オリジナルの色を推定し、再現します。
+</p>
+<p style="text-align: center;"><img src="/daa/public/images/rgb_color_reproduction.png" alt="RGB撮影における色再現" /></p>
+<p>
+この方法で色再現する場合、撮影時の照明が特に重要になります。
+</p>
+<p>
+色が見えるのは、物体が光を反射するからです。
+ところが、物体によって、どの波長の光をどのくらい反射するか(分光反射率)が異なります。
+このため、ある照明のもとでは2つの物体が同じ色に見えても、別な照明のもとでは異なった色に見えることがあります(メタメリズムと呼ばれています)。
+</p>
+<p>
+メタメリズムとはやや異なりますが、よく考えてみれば、照明などの周囲の環境に応じて全く色が変わって見えるものは、実はわたしたちの身の回りにたくさんあります。
+たとえば、水や鏡や金属光沢のような表面を持った物体は周囲の色を映し出すので、周囲の環境が変われば全く異なった色になります。
+</p>
+<p>
+通常のRGB撮影は、撮影した時の照明のもとで、どのように見えたのかを記録するものです。
+よって、撮影したい対象を、どのような照明のもとで見たときの色を再現したいのかによって、照明を設計する必要があります。
+</p>
+</div>
+<div class="section">
+<h3>マルチバンド撮影における色再現</h3>
+<p>
+より高度な色再現を行なうために、情報通信研究機構(旧・通信放送機構)の赤坂ナチュラルビジョンリサーチセンターで開発された、マルチバンド撮影の技術を使用しています。
+</p>
+<p>
+高度な色再現を行なうには、物体の表面でどの波長の光がどのくらい反射されるのか(分光反射率)を推定して活用します。
+通常のカメラではRGBの3つに光のスペクトルを分解して撮影していますが、分光反射率を推定するには、より多くの領域(バンド)に分解して撮影する必要があります。
+そこで、通常の撮影の他に、特殊なフィルタを付けた撮影も行ないます。
+すると、「通常の撮影で3つ」+「特殊なフィルタを装着した撮影で3つ」=「光を6つのバンドに分けたデータ」を撮影することができます。
+</p>
+<p>
+これら6つのバンドに分けて撮影した光のデータと、撮影時に物体を照明した光源のスペクトルのデータ、カメラの感度データを利用すると、物体の分光反射率が推定できます。
+そして、物体の分光反射率から、照明にあわせて、物体の精密な色再現画像を生成することができます。
+</p>
+<p style="text-align: center;"><img src="/daa/public/images/multiband_color_reproduction.png" alt="マルチバンド撮影における色再現" /></p>
+</div>
+ 
+ 
+</div>
+<div id="article-bottom">
+</div>
+<!-- メインコンテンツおわり --></div>
+
+<!-- コンテンツ領域おわり --></div>
+<div id="footer"><!-- フッタ -->
+<p id="copyright">Copyright (C) 2009 Digital Archive Aomori, All Rights Reserved.</p>
+<!-- フッタおわり --></div>
+<!-- HTML全体おわり --></div>
+<!-- Google Analytics -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-7641751-1");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+<!-- Google Analyticsおわり -->
+</body>
+</html>

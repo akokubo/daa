@@ -1,0 +1,42 @@
+@charset "UTF-8";
+
+/*
+------------------------------------------------------------
+Win IE 6用スタイルシート
+------------------------------------------------------------ */
+/* テキストの均等配置 */
+p {
+	text-justify: inter-ideograph;
+}
+
+/* コーテシィナビゲーションの間隔 */
+ul#courtesy-nav li {
+	padding: 0 19px 0 15px;
+}
+
+/* バナー文字を太字に */
+#banner h1 {
+	font-weight: bold;
+}
+
+/* 透明PNGに未対応な部分を修正 */
+#header {
+	background: url(/daa/public/images/header-bg-trans.gif) no-repeat;
+}
+#content {
+	background: url(/daa/public/images/content-bg-trans.gif) repeat-y;
+}
+#footer {
+	background: url(/daa/public/images/footer-bg-trans.gif) no-repeat;
+}
+#banner-img {
+	background: url(/daa/public/images/device-trans.gif);
+}
+ul#courtesy-nav li {
+	background: url(/daa/public/images/rightarrow-trans.gif) no-repeat;
+}
+
+/* 枠線を細く */
+ul#nav li { 
+        border-width: 1px;
+}
